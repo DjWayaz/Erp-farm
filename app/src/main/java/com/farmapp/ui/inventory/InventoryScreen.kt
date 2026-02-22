@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.inventory
 
 import androidx.compose.foundation.clickable
@@ -85,7 +86,7 @@ fun InventoryScreen(navController: NavController, viewModel: InventoryViewModel 
         }
     ) { padding ->
         if (items.isEmpty()) {
-            EmptyState(modifier = Modifier.padding(padding), icon = Icons.Default.Inventory, title = "No Inventory Items", subtitle = "Track your feed, medicine, and supplies")
+            EmptyState(modifier = Modifier.padding(padding), icon = Icons.Default.Inventory, title = "No Inventory Items", subtitle = "Track your feed, medicine, and supplies.", actionLabel = "Add Item", onAction = { showAddDialog = true })
         } else {
             LazyColumn(
                 modifier = Modifier.padding(padding),

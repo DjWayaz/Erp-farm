@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.crop
 
 import androidx.compose.foundation.layout.*
@@ -88,7 +89,7 @@ fun FieldDetailScreen(
                             Divider(modifier = Modifier.padding(vertical = 8.dp))
                             Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
                                 Text("Total Input Cost:", fontWeight = FontWeight.SemiBold)
-                                Text("KSh ${String.format("%,.0f", totalCost)}", fontWeight = FontWeight.Bold, color = RedAlert)
+                                Text("USD ${String.format("%,.0f", totalCost)}", fontWeight = FontWeight.Bold, color = RedAlert)
                             }
                         }
                     }
@@ -165,7 +166,7 @@ fun ActivityRow(activity: ActivityEntity, fmt: DateTimeFormatter, onDelete: () -
                 Text(activity.type.displayName, fontWeight = FontWeight.Bold, color = color)
                 Text(activity.date.format(fmt), style = MaterialTheme.typography.bodySmall)
                 activity.notes?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
-                if (activity.cost > 0) Text("Cost: KSh ${String.format("%,.0f", activity.cost)}", style = MaterialTheme.typography.bodySmall, color = RedAlert)
+                if (activity.cost > 0) Text("Cost: USD ${String.format("%,.0f", activity.cost)}", style = MaterialTheme.typography.bodySmall, color = RedAlert)
             }
             IconButton(onClick = onDelete) { Icon(Icons.Default.Delete, null, tint = MaterialTheme.colorScheme.onSurfaceVariant) }
         }
@@ -183,7 +184,7 @@ fun HarvestRow(harvest: HarvestEntity, fmt: DateTimeFormatter) {
                 Text(harvest.date.format(fmt), style = MaterialTheme.typography.bodySmall)
             }
             harvest.sellingPricePerUnit?.let {
-                Text("KSh ${String.format("%,.0f", it * harvest.yieldQuantity)}", fontWeight = FontWeight.Bold, color = MoneyGreen)
+                Text("USD ${String.format("%,.0f", it * harvest.yieldQuantity)}", fontWeight = FontWeight.Bold, color = MoneyGreen)
             }
         }
     }
@@ -219,7 +220,7 @@ fun AddActivityDialog(onDismiss: () -> Unit, onSave: (ActivityType, String?, Dou
                     }
                 }
                 OutlinedTextField(value = notes, onValueChange = { notes = it }, label = { Text("Notes") }, modifier = Modifier.fillMaxWidth())
-                OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost (KSh)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost (USD)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
             }
         },
         confirmButton = {
@@ -256,7 +257,7 @@ fun AddHarvestDialog(onDismiss: () -> Unit, onSave: (Double, String, Double?) ->
                         units.forEach { u -> DropdownMenuItem(text = { Text(u) }, onClick = { unit = u; unitExpanded = false }) }
                     }
                 }
-                OutlinedTextField(value = priceText, onValueChange = { priceText = it }, label = { Text("Selling Price per Unit (KSh, Optional)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = priceText, onValueChange = { priceText = it }, label = { Text("Selling Price per Unit (USD, Optional)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
             }
         },
         confirmButton = {

@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.crop
 
 import androidx.compose.foundation.clickable
@@ -11,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -29,16 +31,21 @@ fun CropManagerScreen(navController: NavController, viewModel: CropViewModel = h
         topBar = {
             TopAppBar(
                 title = { Text("🌱 Crop Manager") },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = CropGreen, titleContentColor = androidx.compose.ui.graphics.Color.White)
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = CropGreen,
+                    titleContentColor = androidx.compose.ui.graphics.Color.White
+                )
             )
         },
         floatingActionButton = {
-            ExtendedFloatingActionButton(
-                onClick = { navController.navigate(Screen.AddField.route) },
-                icon = { Icon(Icons.Default.Add, null) },
-                text = { Text("Add Field") },
-                containerColor = GreenPrimary
-            )
+            if (fields.isNotEmpty()) {
+                ExtendedFloatingActionButton(
+                    onClick = { navController.navigate(Screen.AddField.route) },
+                    icon = { Icon(Icons.Default.Add, null) },
+                    text = { Text("Add Field") },
+                    containerColor = GreenPrimary
+                )
+            }
         }
     ) { padding ->
         if (fields.isEmpty()) {
@@ -46,7 +53,9 @@ fun CropManagerScreen(navController: NavController, viewModel: CropViewModel = h
                 modifier = Modifier.padding(padding),
                 icon = Icons.Default.Grass,
                 title = "No Fields Yet",
-                subtitle = "Tap the button below to add your first field"
+                subtitle = "Start tracking your crops by adding your first field.",
+                actionLabel = "Add First Field",
+                onAction = { navController.navigate(Screen.AddField.route) }
             )
         } else {
             LazyColumn(
@@ -92,12 +101,47 @@ fun FieldCard(field: FieldEntity, fmt: DateTimeFormatter, onClick: () -> Unit) {
 }
 
 @Composable
-fun EmptyState(modifier: Modifier = Modifier, icon: androidx.compose.ui.graphics.vector.ImageVector, title: String, subtitle: String) {
+fun EmptyState(
+    modifier: Modifier = Modifier,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    title: String,
+    subtitle: String,
+    actionLabel: String? = null,
+    onAction: (() -> Unit)? = null
+) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Icon(icon, contentDescription = null, modifier = Modifier.size(72.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f))
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.padding(32.dp)
+        ) {
+            Icon(
+                icon,
+                contentDescription = null,
+                modifier = Modifier.size(80.dp),
+                tint = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+            )
             Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-            Text(subtitle, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                subtitle,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+            if (actionLabel != null && onAction != null) {
+                Spacer(Modifier.height(4.dp))
+                Button(
+                    onClick = onAction,
+                    modifier = Modifier
+                        .fillMaxWidth(0.75f)
+                        .height(52.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
+                ) {
+                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(20.dp))
+                    Spacer(Modifier.width(8.dp))
+                    Text(actionLabel, style = MaterialTheme.typography.titleSmall)
+                }
+            }
         }
     }
 }

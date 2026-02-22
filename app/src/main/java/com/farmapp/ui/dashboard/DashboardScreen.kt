@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.dashboard
 
 import androidx.compose.foundation.background
@@ -237,7 +238,7 @@ fun FinanceCard(label: String, amount: Double, icon: ImageVector, color: Color, 
             Icon(icon, contentDescription = label, tint = color, modifier = Modifier.size(20.dp))
             Spacer(Modifier.height(4.dp))
             Text(
-                "KSh ${String.format("%,.0f", amount)}",
+                "USD ${String.format("%,.0f", amount)}",
                 style = MaterialTheme.typography.bodySmall,
                 fontWeight = FontWeight.Bold,
                 color = color

@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.poultry
 
 import androidx.compose.foundation.layout.*
@@ -68,7 +69,7 @@ fun AddBatchScreen(navController: NavController, viewModel: PoultryViewModel = h
 
             OutlinedTextField(value = countText, onValueChange = { countText = it }, label = { Text("Number of Birds *") }, placeholder = { Text("e.g., 100") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number), modifier = Modifier.fillMaxWidth())
 
-            OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost Per Bird (KSh)") }, placeholder = { Text("e.g., 85") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
+            OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost Per Bird (USD)") }, placeholder = { Text("e.g., 85") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
 
             Spacer(Modifier.height(8.dp))
 

@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.finance
 
 import androidx.compose.foundation.layout.*
@@ -130,7 +131,7 @@ fun FinanceScreen(navController: NavController, viewModel: FinanceViewModel = hi
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(cat.category.displayName, style = MaterialTheme.typography.bodyMedium)
-                        Text("KSh ${String.format("%,.0f", cat.total)}", fontWeight = FontWeight.SemiBold, color = RedAlert)
+                        Text("USD ${String.format("%,.0f", cat.total)}", fontWeight = FontWeight.SemiBold, color = RedAlert)
                     }
                 }
             }
@@ -138,7 +139,7 @@ fun FinanceScreen(navController: NavController, viewModel: FinanceViewModel = hi
             // Transactions list
             if (state.transactions.isEmpty()) {
                 item {
-                    EmptyState(icon = Icons.Default.AttachMoney, title = "No Transactions", subtitle = "Add your income and expenses to track your farm's finances")
+                    EmptyState(icon = Icons.Default.AttachMoney, title = "No Transactions", subtitle = "Add your income and expenses to track your farm's finances.", actionLabel = "Add Transaction", onAction = { showAddDialog = true })
                 }
             } else {
                 item {
@@ -167,7 +168,7 @@ fun FinanceScreen(navController: NavController, viewModel: FinanceViewModel = hi
 @Composable
 fun FinanceStat(label: String, amount: Double, color: Color) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text("KSh ${String.format("%,.0f", amount)}", fontWeight = FontWeight.ExtraBold, color = color, style = MaterialTheme.typography.titleMedium)
+        Text("USD ${String.format("%,.0f", amount)}", fontWeight = FontWeight.ExtraBold, color = color, style = MaterialTheme.typography.titleMedium)
         Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
@@ -186,7 +187,7 @@ fun TransactionRow(transaction: TransactionEntity, fmt: DateTimeFormatter, onDel
                 Text("${transaction.category.displayName} • ${transaction.date.format(fmt)}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             Text(
-                "${if (isIncome) "+" else "-"} KSh ${String.format("%,.0f", transaction.amount)}",
+                "${if (isIncome) "+" else "-"} USD ${String.format("%,.0f", transaction.amount)}",
                 fontWeight = FontWeight.Bold,
                 color = color
             )
@@ -239,7 +240,7 @@ fun AddTransactionDialog(onDismiss: () -> Unit, onSave: (TransactionType, Transa
                     }
                 }
 
-                OutlinedTextField(value = amountText, onValueChange = { amountText = it }, label = { Text("Amount (KSh) *") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = amountText, onValueChange = { amountText = it }, label = { Text("Amount (USD) *") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
                 OutlinedTextField(value = description, onValueChange = { description = it }, label = { Text("Description *") }, placeholder = { Text("e.g., Bought 10 bags of feed") }, modifier = Modifier.fillMaxWidth())
             }
         },

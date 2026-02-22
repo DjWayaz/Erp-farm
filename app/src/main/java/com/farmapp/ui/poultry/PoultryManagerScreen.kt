@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.poultry
 
 import androidx.compose.foundation.clickable
@@ -44,7 +45,7 @@ fun PoultryManagerScreen(navController: NavController, viewModel: PoultryViewMod
         }
     ) { padding ->
         if (batches.isEmpty()) {
-            EmptyState(modifier = Modifier.padding(padding), icon = Icons.Default.Egg, title = "No Flocks Yet", subtitle = "Add your first batch of birds")
+            EmptyState(modifier = Modifier.padding(padding), icon = Icons.Default.Egg, title = "No Flocks Yet", subtitle = "Start tracking your chickens by adding your first flock.", actionLabel = "Add First Flock", onAction = { navController.navigate(Screen.AddBatch.route) })
         } else {
             LazyColumn(
                 modifier = Modifier.padding(padding),

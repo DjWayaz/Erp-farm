@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 package com.farmapp.ui.poultry
 
 import androidx.compose.foundation.layout.*
@@ -70,7 +71,7 @@ fun BatchDetailScreen(batchId: Long, navController: NavController, viewModel: Po
                                 StatItem("Initial", b.initialCount.toString(), GreenPrimary)
                                 StatItem("Alive", b.aliveCount.toString(), GreenPrimary)
                                 StatItem("Mortality", "${b.initialCount - b.aliveCount}", RedAlert)
-                                StatItem("Feed Cost", "KSh ${String.format("%,.0f", totalFeedCost)}", AmberAccent)
+                                StatItem("Feed Cost", "USD ${String.format("%,.0f", totalFeedCost)}", AmberAccent)
                             }
                         }
                     }
@@ -123,7 +124,7 @@ fun BatchDetailScreen(batchId: Long, navController: NavController, viewModel: Po
                                 Text("${feed.bagsUsed} bags", fontWeight = FontWeight.Bold)
                                 Text(feed.date.format(fmt), style = MaterialTheme.typography.bodySmall)
                             }
-                            Text("KSh ${String.format("%,.0f", feed.bagsUsed * feed.costPerBag)}", color = AmberAccent, fontWeight = FontWeight.Bold)
+                            Text("USD ${String.format("%,.0f", feed.bagsUsed * feed.costPerBag)}", color = AmberAccent, fontWeight = FontWeight.Bold)
                         }
                     }
                 }
@@ -284,7 +285,7 @@ fun FeedDialog(onDismiss: () -> Unit, onSave: (Double, Double) -> Unit) {
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(value = bagsText, onValueChange = { bagsText = it }, label = { Text("Bags Used") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
-                OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost Per Bag (KSh)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(value = costText, onValueChange = { costText = it }, label = { Text("Cost Per Bag (USD)") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.fillMaxWidth())
             }
         },
         confirmButton = { TextButton(onClick = { onSave(bagsText.toDoubleOrNull() ?: 0.0, costText.toDoubleOrNull() ?: 0.0) }, enabled = bagsText.toDoubleOrNull() != null) { Text("Save") } },
