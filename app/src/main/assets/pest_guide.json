@@ -1,0 +1,162 @@
+[
+  {
+    "id": "maize_fall_armyworm",
+    "name": "Fall Armyworm",
+    "localName": "Mdudu wa Mahindi (Swahili)",
+    "affectedCrop": "Maize",
+    "symptoms": "Irregular holes in leaves, especially in the whorl (heart) of the plant. Look for frass (insect droppings that look like sawdust) inside the whorl. Young larvae cause windowing effect on leaves. Severe damage leaves plants looking ragged. Most destructive at vegetative stage.",
+    "treatment": "1. Apply recommended pesticides such as Emamectin Benzoate (e.g., Escort, Coragen) directly into the whorl. 2. For small farms, manually remove and destroy egg masses and young caterpillars. 3. Apply when larvae are small (1st-2nd instar) for best results. 4. Spray early morning or evening. 5. Neem-based products can help on small farms.",
+    "prevention": "1. Plant early in the season to avoid peak pest periods. 2. Practice crop rotation. 3. Keep field edges clear of grass where adults lay eggs. 4. Encourage natural predators such as birds and parasitic wasps. 5. Use pheromone traps to monitor adult populations.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "maize_stalk_borer",
+    "name": "Maize Stalk Borer",
+    "localName": "Borer ya Shina (Swahili)",
+    "affectedCrop": "Maize",
+    "symptoms": "Dead heart in young plants (central shoot dies while outer leaves remain green). Holes in stem with frass/sawdust. Broken tassels. Tunnels inside the stalk when cut open. Weakened plants that lodge (fall over) easily.",
+    "treatment": "1. Apply carbofuran granules (Furadan) into the whorl at 2-4 weeks. 2. Use Emamectin Benzoate foliar spray. 3. Destroy crop residues after harvest to kill pupae. 4. Biological control: Trichogramma wasps are natural parasitoids.",
+    "prevention": "1. Plant as early as possible. 2. Remove and burn crop residues immediately after harvest. 3. Practice deep plowing to expose pupae. 4. Use resistant varieties where available.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "tomato_early_blight",
+    "name": "Early Blight",
+    "localName": null,
+    "affectedCrop": "Tomatoes",
+    "symptoms": "Brown or black spots on older (lower) leaves first. Spots have concentric rings giving a target-board appearance. Yellow halo around spots. Affected leaves turn yellow and drop prematurely. Disease moves upward on the plant. Stems and fruits can also be affected.",
+    "treatment": "1. Remove and destroy infected leaves immediately. 2. Apply fungicides containing Mancozeb, Chlorothalonil, or Copper-based products. 3. Spray every 7-10 days during wet weather. 4. Ensure good coverage on undersides of leaves. 5. Avoid overhead irrigation.",
+    "prevention": "1. Use certified disease-free seeds. 2. Practice 2-3 year crop rotation (avoid solanaceous crops). 3. Mulch around plants to prevent soil splash. 4. Water at the base, not overhead. 5. Maintain adequate plant spacing for airflow.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "tomato_late_blight",
+    "name": "Late Blight",
+    "localName": "Ugonjwa wa Nyanya (Swahili)",
+    "affectedCrop": "Tomatoes",
+    "symptoms": "Water-soaked, pale green to brown lesions on leaves that quickly turn dark brown to black. White fuzzy growth (sporulation) visible on underside of leaves in humid conditions. Rapid collapse of entire plant in severe cases. Dark brown areas on stems. Fruits show brown, greasy patches.",
+    "treatment": "1. Remove and destroy severely infected plants away from field. 2. Apply systemic fungicides: Metalaxyl + Mancozeb (e.g., Ridomil Gold) or Cymoxanil + Mancozeb. 3. Spray every 5-7 days in wet conditions. 4. Copper-based fungicides offer some protection.",
+    "prevention": "1. Use resistant varieties. 2. Ensure good drainage. 3. Avoid working in field when plants are wet. 4. Monitor weather forecasts — disease spreads rapidly in cool, wet conditions.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "bean_rust",
+    "name": "Bean Rust",
+    "localName": null,
+    "affectedCrop": "Beans",
+    "symptoms": "Small, powdery, reddish-brown pustules (blisters) on undersides of leaves. Yellow spots on upper leaf surface corresponding to pustules below. Severely affected leaves turn yellow and drop. Pods can also be affected. Plants look generally unhealthy with reduced yield.",
+    "treatment": "1. Apply fungicides: Mancozeb, Copper Oxychloride, Triadimefon, or Tebuconazole. 2. Spray at first sign of disease and repeat every 10-14 days. 3. Remove badly infected plant material.",
+    "prevention": "1. Use rust-resistant varieties. 2. Practice crop rotation (2 years). 3. Avoid overhead irrigation. 4. Ensure good plant spacing. 5. Remove volunteer bean plants.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "bean_angular_leaf_spot",
+    "name": "Angular Leaf Spot",
+    "localName": null,
+    "affectedCrop": "Beans",
+    "symptoms": "Angular, grey to brown spots on leaves limited by leaf veins — giving the spots a squared, angular appearance. Spots may have a yellow halo. Reddish-brown streaks on pods. Seed infection causes brown discoloration. Common in humid conditions.",
+    "treatment": "1. Apply Copper-based fungicides or Mancozeb. 2. Spray at onset of disease. 3. Remove and destroy infected plant debris.",
+    "prevention": "1. Use certified disease-free seed. 2. Practice 2-year crop rotation. 3. Avoid working in field when plants are wet. 4. Use resistant varieties.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "potato_late_blight",
+    "name": "Potato Late Blight",
+    "localName": null,
+    "affectedCrop": "Potatoes",
+    "symptoms": "Dark, water-soaked lesions on leaf edges and tips. Cream/white fungal growth on leaf undersides in humid conditions. Rapid browning and collapse of haulms (stems). Brown rot in tubers with reddish-brown discoloration just beneath the skin. Very rapid spread in cool, wet conditions.",
+    "treatment": "1. Apply Metalaxyl + Mancozeb (Ridomil Gold) or Copper fungicides preventively before symptoms appear. 2. Spray every 7 days in humid weather. 3. Remove and destroy infected haulms before harvest.",
+    "prevention": "1. Plant certified disease-free seed tubers. 2. Use resistant varieties. 3. Hill up well to protect tubers. 4. Harvest during dry conditions. 5. Do not allow cull piles near fields.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "cabbage_diamondback_moth",
+    "name": "Diamondback Moth",
+    "localName": null,
+    "affectedCrop": "Cabbage",
+    "symptoms": "Small holes in leaves (window-paning effect where larvae eat from inside leaving a thin layer of epidermis). Larvae are green, small and wriggle actively when disturbed. Holes in outer and inner leaves. Severe damage can completely skeletonize leaves. Most damaging pest of brassicas.",
+    "treatment": "1. Rotate insecticides to prevent resistance: use Bt (Bacillus thuringiensis), Emamectin Benzoate, Chlorantraniliprole, or Spinosad. 2. Never rely on a single chemical. 3. Apply when larvae are young. 4. Spray undersides of leaves thoroughly.",
+    "prevention": "1. Use fine mesh nets to exclude adults. 2. Practice crop rotation with non-brassica crops. 3. Remove old brassica crops immediately after harvest. 4. Intercrop with non-host plants.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "aphids_general",
+    "name": "Aphids",
+    "localName": "Chawa wa Mimea (Swahili)",
+    "affectedCrop": "All Crops",
+    "symptoms": "Clusters of small soft-bodied insects (green, black, brown) on growing tips and undersides of leaves. Leaves curl, pucker, or become distorted. Sticky honeydew on leaves attracts ants and causes black sooty mold. Yellowing and stunted growth. Aphids transmit many plant viruses.",
+    "treatment": "1. Spray with soapy water (mild soap + water) for small infestations. 2. Apply Dimethoate, Imidacloprid, or Pirimicarb. 3. Encourage natural predators (ladybirds, lacewings). 4. Reflective mulch can deter aphids.",
+    "prevention": "1. Monitor crops regularly. 2. Remove heavily infested shoots. 3. Avoid excessive nitrogen fertilization (lush growth attracts aphids). 4. Use yellow sticky traps to monitor. 5. Plant flowering plants nearby to attract predators.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "whitefly_general",
+    "name": "Whiteflies",
+    "localName": null,
+    "affectedCrop": "Tomatoes",
+    "symptoms": "Tiny white insects that fly up in clouds when plants are disturbed. Eggs and nymphs on undersides of leaves. Sticky honeydew and sooty mold on leaf surfaces. Yellowing, reduced vigor. Very important as vectors of tomato yellow leaf curl virus (TYLCV).",
+    "treatment": "1. Apply Imidacloprid, Thiamethoxam, or Pyriproxyfen (insect growth regulator). 2. Use yellow sticky traps. 3. Spray undersides of leaves thoroughly. 4. Rotate chemicals to prevent resistance.",
+    "prevention": "1. Use reflective silver mulch. 2. Use fine mesh screens in nurseries. 3. Remove and destroy heavily infested plants early. 4. Avoid planting near old tomato fields.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "maize_lethal_necrosis",
+    "name": "Maize Lethal Necrosis (MLN)",
+    "localName": "Ugonjwa wa Kuua Mahindi (Swahili)",
+    "affectedCrop": "Maize",
+    "symptoms": "Yellowing of leaves starting from the edges. Dead, necrotic tissue spreading over the whole leaf. Necrosis (death) of the entire plant. Premature death of plants before ear formation. Complete crop failure if severe. Caused by a combination of viruses (MCMV + SCMV/WSMV).",
+    "treatment": "There is no cure once a plant is infected. 1. Remove and destroy infected plants immediately — do not compost. 2. Control insect vectors (aphids, thrips, rootworms) that spread the virus. 3. Avoid working in wet fields to prevent spread.",
+    "prevention": "1. Plant MLN-tolerant/resistant varieties (ask your seed supplier). 2. Use certified virus-free seed. 3. Control vector insects vigorously. 4. Practice strict field hygiene. 5. Avoid planting near old, infected maize fields.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "newcastle_disease",
+    "name": "Newcastle Disease (ND)",
+    "localName": "Mdondo (Swahili)",
+    "affectedCrop": "Poultry",
+    "symptoms": "Sudden death in unvaccinated birds. Respiratory distress: gasping, coughing, sneezing. Neurological signs: twisting of neck (torticollis), paralysis of wings and legs, walking in circles. Green, watery diarrhea. Drop in egg production. Swelling of tissues around the eye and neck.",
+    "treatment": "No specific treatment. Supportive care only: 1. Ensure clean water and electrolytes. 2. Prevent secondary bacterial infections with antibiotics. 3. Cull severely affected birds humanely. 4. Report outbreaks to local veterinary authorities.",
+    "prevention": "1. VACCINATION is the only effective prevention — vaccinate at day-old, 14 days, and regularly thereafter. 2. Strict biosecurity: control farm visitors and vehicles. 3. Quarantine new birds for 14-21 days before introducing to flock. 4. Proper disposal of dead birds (burn or deep burial).",
+    "severity": "HIGH"
+  },
+  {
+    "id": "gumboro_ibd",
+    "name": "Gumboro Disease (IBD)",
+    "localName": null,
+    "affectedCrop": "Poultry",
+    "symptoms": "Sudden onset in birds 3-6 weeks old. Ruffled feathers, depression, reluctance to eat. White or watery diarrhea. Pecking at their own vent. Dehydration and rapid weight loss. High mortality in acute cases (up to 30%). Birds may recover but have permanently suppressed immunity.",
+    "treatment": "No specific treatment. 1. Provide electrolytes in drinking water (ORS). 2. Ensure good ventilation and comfortable temperature. 3. Administer vitamins to support recovery. 4. Antibiotics to prevent secondary infections.",
+    "prevention": "1. Vaccinate chicks at 10-14 days and again at 18-21 days with live IBD vaccine. 2. Mother flock vaccination to provide maternal immunity in day-old chicks. 3. Strict biosecurity — virus survives in environment for months. 4. Thorough cleaning and disinfection between flocks.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "coccidiosis",
+    "name": "Coccidiosis",
+    "localName": null,
+    "affectedCrop": "Poultry",
+    "symptoms": "Bloody or watery diarrhea (dark-red or reddish-brown). Depression, huddling under heat source. Pale combs and wattles. Reduced feed and water intake. High mortality in young chicks (3-6 weeks). Birds may have droopy wings.",
+    "treatment": "1. Treat with Amprolium (Amprol), Toltrazuril (Baycox), or Sulphonamides in drinking water. 2. Treat the entire flock, not just sick birds. 3. Improve litter management — wet litter is the main risk factor. 4. Provide vitamins K and A to support recovery.",
+    "prevention": "1. Use anticoccidial starter feeds (medicated chick mash). 2. Maintain dry litter — fix water leakages immediately. 3. Avoid overcrowding. 4. Coccidiosis vaccines available — discuss with vet. 5. Good ventilation reduces moisture.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "kale_cabbage_looper",
+    "name": "Cabbage Looper",
+    "localName": null,
+    "affectedCrop": "Kale",
+    "symptoms": "Irregular holes on leaves, usually from the edges inward. Green caterpillars that loop their body when crawling. Frass (droppings) visible on leaves. Young larvae cause windowing. Defoliation can be severe if uncontrolled.",
+    "treatment": "1. Hand-pick caterpillars in small gardens. 2. Apply Bt (Bacillus thuringiensis) — effective and safe for vegetables. 3. Use Spinosad or Emamectin Benzoate for heavier infestations. 4. Spray in the evening for best results.",
+    "prevention": "1. Inspect plants twice a week and remove egg masses. 2. Encourage natural predators (birds, wasps). 3. Use row covers on young plants.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "onion_purple_blotch",
+    "name": "Purple Blotch",
+    "localName": null,
+    "affectedCrop": "Onions",
+    "symptoms": "Small, white, sunken lesions on leaves that expand and turn brown to purple with a red or purple margin. Yellow halo around lesions. Lesions girdle the leaf causing die-back from the tip. Severe infection causes complete collapse of foliage. Most severe in warm, humid conditions.",
+    "treatment": "1. Apply Iprodione, Mancozeb, or Chlorothalonil fungicides. 2. Add a sticker/spreader to improve coverage on waxy onion leaves. 3. Spray every 7 days during high-risk periods.",
+    "prevention": "1. Use disease-free transplants or seeds. 2. Rotate with non-allium crops for 2-3 years. 3. Avoid overhead irrigation. 4. Ensure wide plant spacing. 5. Remove and destroy infected debris.",
+    "severity": "MEDIUM"
+  }
+]
