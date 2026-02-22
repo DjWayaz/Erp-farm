@@ -239,6 +239,7 @@ fun MortalityDialog(onDismiss: () -> Unit, onSave: (Int, String?) -> Unit) {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VaccinationDialog(onDismiss: () -> Unit, onSave: (String, LocalDate) -> Unit) {
     var name by remember { mutableStateOf("") }

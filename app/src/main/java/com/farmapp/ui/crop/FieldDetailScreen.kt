@@ -192,6 +192,7 @@ fun HarvestRow(harvest: HarvestEntity, fmt: DateTimeFormatter) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddActivityDialog(onDismiss: () -> Unit, onSave: (ActivityType, String?, Double) -> Unit) {
+
     var selectedType by remember { mutableStateOf(ActivityType.WEEDED) }
     var notes by remember { mutableStateOf("") }
     var costText by remember { mutableStateOf("") }
@@ -228,6 +229,7 @@ fun AddActivityDialog(onDismiss: () -> Unit, onSave: (ActivityType, String?, Dou
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddHarvestDialog(onDismiss: () -> Unit, onSave: (Double, String, Double?) -> Unit) {
     var quantityText by remember { mutableStateOf("") }
