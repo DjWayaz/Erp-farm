@@ -20,19 +20,20 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.6'
-
-      - name: Download Gradle Wrapper JAR
+      - name: Install Gradle 8.6 and generate wrapper
         run: |
-          mkdir -p gradle/wrapper
-          curl -L "https://repo.gradle.org/gradle/libs-releases/org/gradle/gradle-wrapper/8.6/gradle-wrapper-8.6.jar" \
-            -o gradle/wrapper/gradle-wrapper.jar || \
-          gradle wrapper --gradle-version=8.6
+          # Download and install Gradle 8.6 manually
+          wget -q https://services.gradle.org/distributions/gradle-8.6-bin.zip -O /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /tmp/gradle-install
+          export GRADLE_HOME=/tmp/gradle-install/gradle-8.6
+          export PATH=$GRADLE_HOME/bin:$PATH
+
+          # Use installed Gradle to regenerate the wrapper (this creates the .jar)
+          gradle wrapper --gradle-version=8.6 --distribution-type=bin
+
+          # Confirm jar now exists
+          ls -lh gradle/wrapper/
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
