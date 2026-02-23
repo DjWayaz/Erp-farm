@@ -83,7 +83,7 @@ class FinanceViewModel @Inject constructor(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FinanceScreen(navController: NavController, viewModel: FinanceViewModel = hiltViewModel()) {
+fun FinanceScreen(@Suppress("UNUSED_PARAMETER") navController: NavController, viewModel: FinanceViewModel = hiltViewModel()) {
     val state by viewModel.uiState.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
     val fmt = DateTimeFormatter.ofPattern("dd MMM")

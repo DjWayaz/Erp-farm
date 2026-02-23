@@ -63,7 +63,7 @@ class InventoryViewModel @Inject constructor(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InventoryScreen(navController: NavController, viewModel: InventoryViewModel = hiltViewModel()) {
+fun InventoryScreen(@Suppress("UNUSED_PARAMETER") navController: NavController, viewModel: InventoryViewModel = hiltViewModel()) {
     val items by viewModel.items.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
     var selectedItem by remember { mutableStateOf<InventoryItemEntity?>(null) }

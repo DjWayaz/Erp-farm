@@ -347,7 +347,7 @@ fun SettingsClickItem(
     icon: ImageVector,
     title: String,
     value: String,
-    onClick: () -> Unit
+    @Suppress("UNUSED_PARAMETER") onClick: () -> Unit
 ) {
     Row(
         modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 16.dp, vertical = 12.dp),
@@ -367,7 +367,7 @@ fun SettingsTextItem(
     icon: ImageVector,
     title: String,
     value: String,
-    onClick: () -> Unit
+    @Suppress("UNUSED_PARAMETER") onClick: () -> Unit
 ) {
     Row(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
