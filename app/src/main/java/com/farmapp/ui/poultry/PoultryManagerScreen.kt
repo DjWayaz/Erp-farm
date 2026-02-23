@@ -82,7 +82,7 @@ fun BatchCard(batch: PoultryBatchEntity, onClick: () -> Unit) {
                 }
                 if (batch.type == PoultryType.LAYER) {
                     LinearProgressIndicator(
-                        progress = batch.aliveCount.toFloat() / batch.initialCount.coerceAtLeast(1),
+                        progress = { batch.aliveCount.toFloat() / batch.initialCount.coerceAtLeast(1) },
                         modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
                         color = GreenPrimary,
                         trackColor = RedAlert.copy(alpha = 0.2f)

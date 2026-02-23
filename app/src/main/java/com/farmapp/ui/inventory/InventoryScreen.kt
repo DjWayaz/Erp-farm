@@ -169,7 +169,7 @@ fun InventoryCard(item: InventoryItemEntity, daysLeft: Int, isLow: Boolean, onAd
             if (item.consumptionRatePerDay > 0) {
                 Spacer(Modifier.height(8.dp))
                 LinearProgressIndicator(
-                    progress = (daysLeft.toFloat() / item.lowStockThresholdDays.coerceAtLeast(1)).coerceIn(0f, 1f),
+                    progress = { (daysLeft.toFloat() / item.lowStockThresholdDays.coerceAtLeast(1)).coerceIn(0f, 1f) },
                     modifier = Modifier.fillMaxWidth(),
                     color = if (isLow) OrangeWarn else GreenPrimary,
                     trackColor = MaterialTheme.colorScheme.surfaceVariant

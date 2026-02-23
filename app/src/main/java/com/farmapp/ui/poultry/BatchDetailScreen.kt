@@ -70,7 +70,7 @@ fun BatchDetailScreen(batchId: Long, navController: NavController, viewModel: Po
                         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(b.type.displayName, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                             Text("Acquired: ${b.dateAcquired.format(fmt)}", style = MaterialTheme.typography.bodySmall)
-                            Divider()
+                            HorizontalDivider()
                             Row(horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()) {
                                 StatItem("Initial", b.initialCount.toString(), GreenPrimary)
                                 StatItem("Alive", b.aliveCount.toString(), GreenPrimary)

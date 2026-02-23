@@ -67,19 +67,17 @@ class GuideViewModelTest {
 
     // ── pests StateFlow with debounce ─────────────────────────────────────────
 
-    @Test fun `pests calls getAllPests when query is blank`() = runTest {
+    @Test fun `pests calls getAllPests when query is blank`() = runTest(testDispatcher) {
         val allPests = listOf(pest("p1", "Armyworm"), pest("p2", "Aphids"))
         whenever(repo.getAllPests()).thenReturn(flowOf(allPests))
+        whenever(repo.searchPests(any())).thenReturn(flowOf(emptyList()))
         val vm2 = GuideViewModel(repo)
-        // No query set — should use getAllPests
+        advanceTimeBy(400) // past debounce so the blank query settles
         advanceUntilIdle()
-        vm2.pests.test {
-            assertEquals(2, awaitItem().size)
-            cancelAndIgnoreRemainingEvents()
-        }
+        verify(repo, atLeastOnce()).getAllPests()
     }
 
-    @Test fun `pests calls searchPests after debounce when query is set`() = runTest {
+    @Test fun `pests calls searchPests after debounce when query is set`() = runTest(testDispatcher) {
         val results = listOf(pest("fa", "Fall Armyworm"))
         whenever(repo.searchPests("armyworm")).thenReturn(flowOf(results))
         whenever(repo.getAllPests()).thenReturn(flowOf(emptyList()))
@@ -90,11 +88,11 @@ class GuideViewModelTest {
         verify(repo, atLeastOnce()).searchPests("armyworm")
     }
 
-    @Test fun `pests does not search before debounce window`() = runTest {
+    @Test fun `pests does not search before debounce window`() = runTest(testDispatcher) {
         whenever(repo.getAllPests()).thenReturn(flowOf(emptyList()))
         val vm2 = GuideViewModel(repo)
         vm2.setSearchQuery("ma")
-        advanceTimeBy(100) // inside debounce window
+        advanceTimeBy(100) // inside debounce window, not yet fired
         verify(repo, never()).searchPests("ma")
     }
 

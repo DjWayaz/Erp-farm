@@ -2,11 +2,12 @@ package com.farmapp.viewmodel
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.test.core.app.ApplicationProvider
+import androidx.work.testing.WorkManagerTestInitHelper
 import app.cash.turbine.test
 import com.farmapp.data.local.entity.*
 import com.farmapp.data.repository.PoultryRepository
 import com.farmapp.ui.poultry.PoultryViewModel
-import com.farmapp.worker.VaccinationReminderWorker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
@@ -16,10 +17,14 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.MockedStatic
+import org.junit.runner.RunWith
 import org.mockito.kotlin.*
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 import java.time.LocalDate
 
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [29])
 @OptIn(ExperimentalCoroutinesApi::class)
 class PoultryViewModelTest {
 
@@ -41,7 +46,10 @@ class PoultryViewModelTest {
     @Before fun setUp() {
         Dispatchers.setMain(testDispatcher)
         repo = mock()
-        context = mock()
+        // Initialise WorkManager with test driver so cancel/schedule don't crash
+        val appContext = ApplicationProvider.getApplicationContext<Context>()
+        WorkManagerTestInitHelper.initializeTestWorkManager(appContext)
+        context = appContext
         whenever(repo.getAllActiveBatches()).thenReturn(flowOf(emptyList()))
         vm = PoultryViewModel(repo, context)
     }
