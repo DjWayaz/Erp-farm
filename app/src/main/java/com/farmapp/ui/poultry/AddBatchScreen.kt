@@ -35,7 +35,7 @@ fun AddBatchScreen(navController: NavController, viewModel: PoultryViewModel = h
                 title = { Text("Add New Flock") },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(Icons.Default.ArrowBack, null)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, null)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = AmberAccent, titleContentColor = Color.Black, navigationIconContentColor = Color.Black)

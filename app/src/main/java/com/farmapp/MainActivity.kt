@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -16,6 +17,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.farmapp.ui.navigation.FarmNavHost
 import com.farmapp.ui.navigation.Screen
+import com.farmapp.ui.splash.SplashScreen
 import com.farmapp.ui.theme.FarmAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,7 +27,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FarmAppTheme {
-                FarmApp()
+                var showSplash by remember { mutableStateOf(true) }
+                if (showSplash) {
+                    SplashScreen(onSplashFinished = { showSplash = false })
+                } else {
+                    FarmApp()
+                }
             }
         }
     }
@@ -38,22 +45,20 @@ data class BottomNavItem(
 )
 
 val bottomNavItems = listOf(
-    BottomNavItem("Home",     Icons.Default.Home,        Screen.Dashboard.route),
-    BottomNavItem("Crops",    Icons.Default.Grass,       Screen.CropManager.route),
-    BottomNavItem("Poultry",  Icons.Default.Egg,         Screen.PoultryManager.route),
-    BottomNavItem("Inventory",Icons.Default.Inventory,   Screen.Inventory.route),
-    BottomNavItem("Finance",  Icons.Default.AttachMoney, Screen.Finance.route),
-    BottomNavItem("Guide",    Icons.Default.MenuBook,    Screen.PestGuide.route)
+    BottomNavItem("Home",      Icons.Default.Home,          Screen.Dashboard.route),
+    BottomNavItem("Crops",     Icons.Default.Grass,         Screen.CropManager.route),
+    BottomNavItem("Poultry",   Icons.Default.Egg,           Screen.PoultryManager.route),
+    BottomNavItem("Inventory", Icons.Default.Inventory,     Screen.Inventory.route),
+    BottomNavItem("Finance",   Icons.Default.AttachMoney,   Screen.Finance.route),
+    BottomNavItem("Guide",     Icons.AutoMirrored.Filled.MenuBook, Screen.PestGuide.route)
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FarmApp() {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    // Routes where the bottom bar is visible
     val topLevelRoutes = bottomNavItems.map { it.route }
 
     Scaffold(
@@ -77,7 +82,7 @@ fun FarmApp() {
                 }
             }
         }
-    ) { paddingValues ->
+    ) { _ ->
         FarmNavHost(navController = navController)
     }
 }

@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, kotlinx.coroutines.FlowPreview::class)
 package com.farmapp.ui.guide
 
 import androidx.compose.foundation.clickable
@@ -7,6 +7,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
+import androidx.compose.material.icons.automirrored.filled.TrendingDown
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -81,7 +85,7 @@ fun PestGuideScreen(navController: NavController, viewModel: GuideViewModel = hi
             if (pests.isEmpty() && query.isNotBlank()) {
                 EmptyState(icon = Icons.Default.SearchOff, title = "No Results", subtitle = "Try a different search term")
             } else if (pests.isEmpty()) {
-                EmptyState(icon = Icons.Default.MenuBook, title = "Guide Loading...", subtitle = "The pest guide will appear momentarily")
+                EmptyState(icon = Icons.AutoMirrored.Filled.MenuBook, title = "Guide Loading...", subtitle = "The pest guide will appear momentarily")
             } else {
                 LazyColumn(
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
@@ -135,7 +139,7 @@ fun GuideDetailScreen(pestId: String, navController: NavController, viewModel: G
         topBar = {
             TopAppBar(
                 title = { Text(pest?.name ?: "Pest Detail") },
-                navigationIcon = { IconButton(onClick = { navController.popBackStack() }) { Icon(Icons.Default.ArrowBack, null) } },
+                navigationIcon = { IconButton(onClick = { navController.popBackStack() }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, null) } },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = BrownSurface, titleContentColor = Color.White, navigationIconContentColor = Color.White)
             )
         }

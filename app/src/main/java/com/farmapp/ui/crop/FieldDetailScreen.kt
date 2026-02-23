@@ -7,6 +7,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
+import androidx.compose.material.icons.automirrored.filled.TrendingDown
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -47,7 +51,7 @@ fun FieldDetailScreen(
                 title = { Text(field?.name ?: "Field Detail") },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(Icons.Default.ArrowBack, null)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, null)
                     }
                 },
                 actions = {
@@ -86,7 +90,7 @@ fun FieldDetailScreen(
                             Text("${f.sizeHectares} hectares • ${f.soilType ?: "Soil type not set"}", style = MaterialTheme.typography.bodyMedium)
                             Text("Planted: ${f.plantingDate.format(fmt)}", style = MaterialTheme.typography.bodySmall)
                             f.expectedHarvestDate?.let { Text("Expected Harvest: ${it.format(fmt)}", style = MaterialTheme.typography.bodySmall, color = AmberAccent) }
-                            Divider(modifier = Modifier.padding(vertical = 8.dp))
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
                             Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
                                 Text("Total Input Cost:", fontWeight = FontWeight.SemiBold)
                                 Text("USD ${String.format("%,.0f", totalCost)}", fontWeight = FontWeight.Bold, color = RedAlert)
