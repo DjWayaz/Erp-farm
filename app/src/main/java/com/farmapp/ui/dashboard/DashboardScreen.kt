@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.farmapp.ui.navigation.Screen
-import com.farmapp.ui.navigation.Screen
 import com.farmapp.ui.theme.*
 import java.text.NumberFormat
 import java.time.LocalDate
